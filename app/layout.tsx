@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "NutriLife – Personalized Nutrition & Expert Consultations",
-  description: "AI-powered diet plans and expert nutritionist consultations for a healthier tomorrow.",
+  title: "NutriLife — AI-Powered Nutrition",
+  description: "Personalized nutrition plans powered by machine learning. Built for precision.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
